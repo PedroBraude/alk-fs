@@ -3,6 +3,9 @@ const server = express();
 const cors = require('cors')
 const { db,  Operaciones } = require('./db.js');
 const path = require('path');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
 const PORT = process.env.PORT || 3000;
 
 // process.env.PORT es una variable de entorno que se puede usar para configurar el puerto
@@ -12,8 +15,19 @@ server.use(cors())
 server.use(express.json());
 
 
-server.use(express.static("./client/build"));//agarra todo el contenido static del build del cliente estando en la misma carpeta
 
+server.use(express.static("./client/build"));//agarra todo el contenido static del build del cliente estando en la misma carpeta
+server.use(cors())
+server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
+server.use(bodyParser.json({ limit: '50mb' }));
+server.use(cookieParser());
+// server.use(morgan('dev')); // ver loop en operaciones
+server.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*'); // update to match the domain you will make the request from
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
 server.post('/operaciones', async (req, res) => {
   const { concept, amount, date, type } = req.body;
@@ -101,3 +115,5 @@ server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   db.sync({ force: false });
 });
+
+
