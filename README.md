@@ -7,6 +7,7 @@
 - [Como correr en local](#runlocal)
 - [Sobre el frontend](#frontend)
 - [Sobre el backend](#backend)
+
 [Volver al Indice](#top)
 
 # CHALLENGE FULL STACK - JavaScript 🚀
@@ -103,7 +104,7 @@ cd ../client/
 npm run start
 ```
 
-<a name="api"></a>
+<a name="backend"></a>
 ## El backend
 - El repositorio es este mismo
 - api desarrollada en NodeJS y servidor express.)
