@@ -1,0 +1,71 @@
+.incomes__container>div {
+    background: var(--color-bg-variant);
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    width: 60%;
+    margin: 0 auto;
+
+}
+
+.incomes__container>div:hover {
+    background: var(--color-primary-variant);   
+    border-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.incomes{
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+.incomes > h3 {
+    text-align: center;
+    color: var(--color-bg);
+}
+
+
+.incomes__details-h4{
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* ============MEDIA QUERIES(medium devices)============*/
+
+@media screen and (max-width: 1024px) {
+    .container.incomes__container>div, h4 {
+        width: var(--container-width-md);
+        font-size: 2.4rem;
+
+    }
+    .incomes__container {
+        grid-template-columns: 1fr;
+    }
+
+    .incomes__container>div {
+        width: 80%;
+        padding: 2rem;
+        margin: 0 auto;
+    }
+
+
+}
+
+/* ============MEDIA QUERIES(small devices)============*/
+
+@media screen and (max-width: 600px) {
+    .container.incomes__container>div , h4{
+        width: var(--container-width-sm);
+        font-size: 1.2rem!important;
+    }
+
+
+    .incomes__container {
+        gap: 1rem;
+    }
+
+    .incomes__container>div {
+        width: 100%;
+        padding: 2 rem 1rem ;
+}
+
+}

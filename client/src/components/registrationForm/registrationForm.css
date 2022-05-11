@@ -1,0 +1,123 @@
+.container.registration__container {
+    width: 50%;
+    background: transparent;
+    border-color: var(--color-primary);
+}
+
+.registration__container-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.registration__container-btns>button {
+    background: #ff652f;
+}
+
+.toggle {
+    position: relative;
+    left: 48%;
+    background: green;
+    color: white;
+
+}
+
+.swal-modal {
+    color: var(--color-white);
+    background: var(--color-bg-variant);
+}
+
+h2 {
+    background: var(--color-bg-variant)
+}
+
+
+/******************************** FORM ********************************/
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    color: var(--color-primary);
+}
+
+input,
+.registration__form-type {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    border: 2px solid var(--color-primary-variant);
+    resize: none;
+    color: var(--color-primary);
+    -webkit-box-shadow: inset 10px 10px 112px -12px rgba(229, 229, 229, 1);
+    -moz-box-shadow: inset 10px 10px 112px -12px rgba(229, 229, 229, 1);
+    box-shadow: inset 10px 10px 112px -12px rgba(229, 229, 229, 1);
+    text-align: center;
+}
+
+.registration__form-type option {
+    color: var(--color-primary);
+    background: var(--color-white);
+}
+
+/* ============MEDIA QUERIES(medium devices)============*/
+
+@media screen and (max-width: 1024px) {
+    .container.registration__container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+
+
+    input,
+    .registration__form-type {
+        font-size: 2rem;
+    }
+
+    .registration__container-btns>button {
+        width: 100%;
+        height: 6rem;
+        font-size: 1.7rem
+    }
+
+    .registration__link,
+    .registration__link>button {
+        width: 70%;
+        height: 6rem;
+        font-size: 1.7rem
+    }
+}
+
+/* ============MEDIA QUERIES(small devices)============*/
+
+@media screen and (max-width: 600px) {
+    .container.registration__container {
+        width: var(--container-width-sm)
+    }
+
+    input,
+    .registration__form-type {
+        font-size: 1.5rem;
+    }
+
+    .registration__container-btns>button {
+        width: 80%;
+        height: 3rem;
+        font-size: 1rem
+    }
+
+    .registration__link,
+    .registration__link>button {
+        width: 80%;
+        height: 3rem;
+        font-size: 1rem
+    }
+    h2 {
+        font-size: 2rem;
+    }
+
+}

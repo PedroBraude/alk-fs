@@ -1,0 +1,129 @@
+.container.records__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: var(--container-width-lg);    
+}
+
+.records__item {
+    color: var(--color-bg);
+    background: var(--color-bg-variant);
+    transition: var(--transition);
+}
+
+
+
+.records__item:hover {
+    color: var(--color-bg);
+    background: var(--color-primary-variant);   
+    border-color: var(--color-primary);
+
+}
+
+.records__item-image{
+    border-radius:1.5rem;
+    overflow: hidden;
+}
+
+.records__item-li, .records__item-title {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column: 1/6;
+    text-align: center;
+    padding: 0.6rem 0.6rem;
+    }
+
+.records__item-buttons{
+    grid-column:5/6;
+    margin:1rem auto 0 auto ;
+    
+}
+
+
+
+.records__ingreso, .records__egreso{
+    background: green;
+    padding: 0 0.2rem;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.records__egreso{
+    background: red;
+    padding: 0 0.4rem;
+
+}
+/* ============MEDIA QUERIES(medium devices)============*/
+
+@media screen and (max-width: 1024px) {
+    .container.records__container {
+        width: 90%;
+        padding: 0.3rem;
+    }
+
+    
+    .records__item{
+        height:14rem;
+        font-size:1.7rem
+        
+    }
+
+    h2{
+        font-size:2.4rem;
+    }
+
+    .btn-delete {
+        font-size: 1rem!important;
+        width: 2rem;
+        height: 2rem;
+        
+    }
+
+}
+
+/* ============MEDIA QUERIES(small devices)============*/
+
+@media screen and (max-width: 600px) {
+    .records__container {
+        grid-template-columns: 1fr;
+        gap:1rem;
+    }
+    .container.records__container {
+        width: 100%;
+        padding: 0.1rem;
+    }
+
+    
+    .records__item{
+        height:10rem;
+        font-size:0.9rem
+        
+    }
+
+    h2{
+        font-size:1.4rem;
+    }
+
+    .btn-delete {
+        font-size: 0.8rem!important;
+        width: 0.8rem;
+        
+    }
+
+    .records__ingreso, .records__egreso{
+        background: green;
+        padding: 0 0.2rem;
+        width: max-content;
+        margin: 0 auto;
+        height:1.4rem;
+    }
+
+    
+    .records__egreso{
+        background: red;
+        padding: 0 0.4rem;
+    
+    }
+
+
+}
