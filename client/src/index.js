@@ -6,7 +6,7 @@ import {BrowserRouter} from 'react-router-dom';
 import axios from 'axios';
 
 
-axios.default.baseIRL = process.env.REACT_APP_API || 'http://localhost:3000';
+axios.default.baseURL = process.env.REACT_APP_API || 'http://localhost:3000';
 
 ReactDOM.render(
   <React.StrictMode>
