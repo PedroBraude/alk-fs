@@ -1,7 +1,7 @@
 const { Sequelize,Op} = require('sequelize');
 const modelOperaciones = require('./Models/Operaciones.js');
 require ('dotenv').config();
-const { PG_USER, PG_PASSWORD, PG_HOST, PG_DATABASE } = process.env;
+const { PG_USER, PG_PASSWORD, PG_HOST, PG_DATABASE, PG_PORT } = process.env;
 
 let sequelize =
   process.env.NODE_ENV === "production"
@@ -9,7 +9,7 @@ let sequelize =
         database: PG_DATABASE,
         dialect: "postgres",
         host: PG_HOST,
-        port: 5432,
+        port: PG_PORT,
         username: PG_USER,
         password: PG_PASSWORD,
         pool: {
